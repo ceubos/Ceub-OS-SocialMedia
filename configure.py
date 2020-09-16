@@ -17,6 +17,8 @@ if console.getInputAsBoolean('Deseja mesmo configurar? Qualquer configuração a
         if console.getInputAsBoolean('Gostaria de configurar o Twitter?') is True:
             console.printLine('-- Twitter --')
             twitter_config.configureTwitter(configurationFile)
+
     except OSError:
         console.printErrorLine("Por favor dê permissão para criação de arquivos na pasta, dica: chmod -R 777 *.")
         sys.exit()
+console.printLine("Configuração concluída")

@@ -22,7 +22,7 @@ def printErrorLine(message):
     :param message:
     :return:
     """
-    sys.stdout.write(ansi_red + message + ansi_terminator + line_break)
+    printLine('Erro: ' + message)
 
 
 def printSuccessLine(message):
@@ -31,7 +31,7 @@ def printSuccessLine(message):
     :param message:
     :return:
     """
-    sys.stdout.write(ansi_green + message + ansi_terminator + line_break)
+    printLine('Sucesso: ' + message)
 
 
 def getInput(question):
