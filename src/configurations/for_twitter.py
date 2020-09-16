@@ -15,16 +15,26 @@ def configureTwitter(file):
     """
     twitterApiKey = None
     twitterApiSecret = None
+    twitterAccessToken = None
+    twitterAccessSecret = None
     while twitterApiKey is None:
         twitterApiKey = console.getInput('TWITTER_API_KEY:')
     while twitterApiSecret is None:
         twitterApiSecret = console.getInput('TWITTER_API_SECRET:')
+    while twitterAccessToken is None:
+        twitterAccessToken = console.getInput('TWITTER_API_ACCESS_TOKEN')
+    while twitterAccessSecret is None:
+        twitterAccessSecret = console.getInput('TWITTER_API_ACCESS_TOKEN_SECRET')
+
     twitterApiKey = twitterApiKey.strip()
     twitterApiSecret = twitterApiSecret.strip()
-
+    twitterAccessToken = twitterAccessToken.strip()
+    twitterAccessSecret = twitterAccessSecret.strip()
 
     file.write('\nTWITTER_API_KEY=' + twitterApiKey)
     file.write('\nTWITTER_API_SECRET_KEY=' + twitterApiSecret)
+    file.write('\nTWITTER_API_ACCESS_TOKEN=' + twitterAccessToken)
+    file.write('\nTWITTER_API_ACCESS_TOKEN_SECRET=' + twitterAccessSecret)
     file.close()
 
     twitterApi = TwitterApi()

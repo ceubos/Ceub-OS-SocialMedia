@@ -28,21 +28,21 @@ class TwitterApi(object):
         raise Exception(
             "TWITTER_API_KEY ou TWITTER_API_SECRET_KEY não configurados. Execute configure.py para configura-los.")
 
-    def getAccessToken(self, usePreviousAccessToken=True):
+    def getAccessToken(self, use_previous_access_token=True):
         """
         Obtém access_token
         Caso usePreviousAccessToken seja. True então é usada uma técnica de cache do access_token evitando realizar requests demasiados.
         https://developer.twitter.com/en/docs/authentication/oauth-2-0/bearer-tokens
         :return: String
         """
-        if usePreviousAccessToken and self.previous_access_token is not None:
+        if use_previous_access_token and self.previous_access_token is not None:
             return self.previous_access_token
         else:
             url = self.base_url + '/oauth2/token'
             credentials = self.getCredentials()
-            response = requests.post(url,
-                                     auth=(credentials['api_key'], credentials['api_secret_key']),
+            response = requests.post(url, auth=(credentials['api_key'], credentials['api_secret_key']),
                                      data={'grant_type': 'client_credentials'})
+
             if response.status_code is 200:
                 responseData = response.json()
                 if "access_token" in responseData:
@@ -57,7 +57,35 @@ class TwitterApi(object):
         :return: True | False
         """
         try:
-            self.getAccessToken(usePreviousAccessToken=True)
+            self.getAccessToken(use_previous_access_token=True)
             return True
         except:
             return False
+
+    """
+    curl -XPOST 
+      --url 'https://api.twitter.com/1.1/statuses/update.json?status=hello' 
+      --header 'authorization: OAuth
+      oauth_consumer_key="oauth_customer_key",
+      oauth_nonce="generated_oauth_nonce",
+      oauth_signature="generated_oauth_signature",
+      oauth_signature_method="HMAC-SHA1",
+      oauth_timestamp="generated_timestamp",
+      oauth_token="oauth_token",
+      oauth_version="1.0"'
+    """
+    def createTweet(self, text):
+        """
+        Cria um tweet.
+        https://developer.twitter.com/en/docs/twitter-api/v1/tweets/post-and-engage/api-reference/post-statuses-update
+        """
+        requestUrl = self.base_url + '/1.1/statuses/update.json'
+        response = requests.post(
+            url=requestUrl,
+            headers={'content-type': 'multipart/form-data'},
+            data={
+                'media': [],
+                'status': text  # Texto do tweet
+            }
+        )
+        fudeu = 1
