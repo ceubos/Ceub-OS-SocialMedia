@@ -1,7 +1,9 @@
 import src.console
-import os
 from dotenv import load_dotenv
 
+"""
+Script de configuração.
+"""
 load_dotenv()
 
 print("Configurar credênciais:")
