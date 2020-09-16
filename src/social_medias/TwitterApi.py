@@ -31,7 +31,7 @@ class TwitterApi(object):
     def getAccessToken(self, usePreviousAccessToken=True):
         """
         Obtém access_token
-        Caso usePreviousAccessToken seja True então é usada uma técnica de cache do access_token evitando realizar requests demasiados.
+        Caso usePreviousAccessToken seja. True então é usada uma técnica de cache do access_token evitando realizar requests demasiados.
         https://developer.twitter.com/en/docs/authentication/oauth-2-0/bearer-tokens
         :return: String
         """
@@ -40,10 +40,9 @@ class TwitterApi(object):
         else:
             url = self.base_url + '/oauth2/token'
             credentials = self.getCredentials()
-            response = requests.post(url, data={
-                'username': credentials['api_key'],
-                'password': credentials['api_secret_key']
-            }, json={'grant_type': 'client_credentials'})
+            response = requests.post(url,
+                                     auth=(credentials['api_key'], credentials['api_secret_key']),
+                                     data={'grant_type': 'client_credentials'})
             if response.status_code is 200:
                 responseData = response.json()
                 if "access_token" in responseData:

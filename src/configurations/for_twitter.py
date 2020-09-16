@@ -8,6 +8,10 @@ load_dotenv()
 
 def configureTwitter(file):
     """
+    Configura automaticamente as váriaveis do Twitter no .env adequado.
+    Váriaveis adequadas
+    - TWITTER_API_KEY
+    - TWITTER_API_SECRET
     """
     twitterApiKey = None
     twitterApiSecret = None
@@ -18,10 +22,9 @@ def configureTwitter(file):
     twitterApiKey = twitterApiKey.strip()
     twitterApiSecret = twitterApiSecret.strip()
 
-    file.writelines([
-        'TWITTER_API_KEY=' + twitterApiKey,
-        'TWITTER_API_SECRET=' + twitterApiSecret
-    ])
+
+    file.write('\nTWITTER_API_KEY=' + twitterApiKey)
+    file.write('\nTWITTER_API_SECRET_KEY=' + twitterApiSecret)
     file.close()
 
     twitterApi = TwitterApi()
