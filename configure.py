@@ -1,19 +1,17 @@
-import src.console
-from dotenv import load_dotenv
+import src.console as console
+import src.configurations.for_twitter as twitter_config
+import os
 
 """
 Script de configuração.
 """
-load_dotenv()
+os.environ['DOT_ENV_PATH'] = os.getcwd() + '/.env'
 
-print("Configurar credênciais:")
-src.console.printLine("Configurando para: Facebook")
-wantsToConfigureFacebook = \
-    src.console.getInputAsBoolean(question="Gostaria de configurar para o facebook")
-
-if wantsToConfigureFacebook is True:
-    fbClientId = None
-    fbClientSecret = None
-    while fbClientSecret is None or fbClientSecret is None:
-        fbClientId = src.console.getInput(question="facebook client id>:")
-        fbClientSecret = src.console.getInput(question="facebook client secret>:")
+console.printLine("Configurar")
+if console.getInputAsBoolean('Deseja mesmo configurar? Qualquer configuração anterior será desfeita...') is True:
+    if os.path.isfile(os.getenv('DOT_ENV_PATH')) is True:
+        os.remove('.env')
+    configurationFile = open(os.environ['DOT_ENV_PATH'], 'a')
+    if console.getInputAsBoolean('Gostaria de configurar o Twitter?') is True:
+        console.printLine('-- Twitter --')
+        twitter_config.configureTwitter(configurationFile)
