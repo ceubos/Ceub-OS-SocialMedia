@@ -24,25 +24,50 @@ Download:
 ```bash 
 git clone https://github.com/nickeatingsalsage/Ceub-OS-SocialMedia
 ```
-Agora dentro da pasta execute os seguintes comandos: 
-```bash
- touch .env
- echo "FACEBOOK_CLIENT_ID=[FACEBOOK CLIENT ID]
-FACEBOOK_CLIENT_SECRET=[FACEBOOK CLIENT SECRET]
-FACEBOOK_PAGE_ID=[FACEBOOK PAGE ID]" >> .env
+**Instalando dependências:**
+
+É necessário ter o "pip" em mãos.  
+O pip é o gerenciador de pacotes padrão para o Python.  
+Mais detalhes de como funciona acessando: https://packaging.python.org/tutorials/installing-packages/
+
+```bash 
+pip freeze > requirements.txt
 ```
 
 #### Documentação
 
-Váriaveis de ambiente(.env)
-###### Facebook
-  FACEBOOK_CLIENT_SECRET: credencial para obter access_token.
   
-  FACEBOOK_CLIENT_ID: credencial para obter access_token, identifica o usuário.
+**Twitter**  
+![alt text](https://help.twitter.com/content/dam/help-twitter/twitter_logo_blue.png "Logo Title Text 1")  
+***Configurando ambiente***
+
+Dentro do projeto execute o seguinte comando e siga as instruções:
+```bash 
+python configure.py
+```   
+ou configure um arquivo .env dentro do diretório com as seguintes váriaveis:
+```bash
+TWITTER_API_KEY=  
+TWITTER_API_SECRET_KEY=  
+TWITTER_API_ACCESS_TOKEN=  
+TWITTER_API_ACCESS_TOKEN_SECRET=
+```   
   
-  FACEBOOK_PAGE_ID:  Id da página do facebook no qual todas as publicações serão direcionadas.
+
+***Interagindo com o Twitter***
+
+Para criar um tweet:
+
+```bash 
+python create-tweet.py 'Olá este é um tweet!'
+```  
+
+Observação:
+
+O Twitter impede tweets repetidos em um espaço de tempo curto. Evite mandar strings de tweet repetidas.
+
 #### Notas
-Seria interessante criar no configure.py uma interface para inserir os tokens necessários automaticamente.
+Nada por enquanto...
 
 
  
