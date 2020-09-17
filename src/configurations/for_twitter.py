@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import src.console as console
 import os
-from src.social_medias.TwitterApi import TwitterApi
+from src.social_medias.Twitter import Twitter
 
 load_dotenv()
 
@@ -37,8 +37,8 @@ def configureTwitter(file):
     file.write('\nTWITTER_API_ACCESS_TOKEN_SECRET=' + twitterAccessSecret)
     file.close()
 
-    twitterApi = TwitterApi()
-    if twitterApi.getIsReady():
+    twitter = Twitter()
+    if twitter.getIsReady():
         console.printSuccessLine("Twitter configurado com sucesso!")
         return True
 
