@@ -59,7 +59,7 @@ TWITTER_API_ACCESS_TOKEN_SECRET=
 Para criar um tweet:
 
 ```bash 
-python create-tweet.py 'Olá este é um tweet!'
+python create_tweet.py 'Olá este é um tweet!'
 ```  
 
 Observação:
