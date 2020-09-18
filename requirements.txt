@@ -1,2 +1,2 @@
-tweepy==*
-python-dotenv==*
+tweepy>=3.9.0
+python-dotenv>=0.14.0
