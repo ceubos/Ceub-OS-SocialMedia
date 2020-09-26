@@ -2,7 +2,6 @@
 
 Repositório oficial: https://github.com/aderbalbotelho/CEUB-OS
 
-Ainda não está funcionando!
 
 #### Integrações:
 
@@ -15,9 +14,9 @@ Facebook
 Instagram: 
 
 #### Atividades 
-- Criar integração com facebook 
-- Criar integração com o twitter
-- Criar integração com o instagram
+- Criar integração com facebook[?] 
+- Criar integração com o twitter[OK]
+- Criar integração com o instagram[?]
 
 #### Instruções
 Download:
