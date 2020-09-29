@@ -3,7 +3,6 @@ import os
 import tweepy
 from tweepy import TweepError
 
-
 class Twitter:
     """
     Responsável por abstrair as chamadas de api para o Twitter.com.
@@ -11,7 +10,6 @@ class Twitter:
     :attribute api -> Representa objeto de Api do Tweepy
     """
     api = None
-    base_url = 'https://api.twitter.com'
 
     def __init__(self):
         credentials = self.getCredentials()
