@@ -22,7 +22,7 @@ Instagram:
 #### Instruções
 Download:
 ```bash 
-git clone https://github.com/nickeatingsalsage/Ceub-OS-SocialMedia
+git clone https://github.com/ceubos/Ceub-OS-SocialMedia
 ```
 **Instalando dependências:**
 
