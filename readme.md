@@ -2,7 +2,6 @@
 
 Repositório oficial: https://github.com/aderbalbotelho/CEUB-OS
 
-Ainda não está funcionando!
 
 #### Integrações:
 
@@ -15,9 +14,9 @@ Facebook
 Instagram: 
 
 #### Atividades 
-- Criar integração com facebook 
-- Criar integração com o twitter
-- Criar integração com o instagram
+- Criar integração com facebook[?] 
+- Criar integração com o twitter[OK]
+- Criar integração com o instagram[?]
 
 #### Instruções
 Download:
@@ -59,7 +58,7 @@ TWITTER_API_ACCESS_TOKEN_SECRET=
 Para criar um tweet:
 
 ```bash 
-python create-tweet.py 'Olá este é um tweet!'
+python create_tweet.py 'Olá este é um tweet!'
 ```  
 
 Observação:
