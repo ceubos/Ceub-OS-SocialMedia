@@ -14,9 +14,9 @@ Facebook
 Instagram: 
 
 #### Atividades 
-- Criar integração com facebook[?] 
+- Criar integração com facebook[?], aguardando upgrade no sistema de permissões.
 - Criar integração com o twitter[OK]
-- Criar integração com o instagram[?]
+- Criar integração com o instagram[?], aguardando upgrade no sistema de permissões.
 
 #### Instruções
 Download:
@@ -30,7 +30,8 @@ O pip é o gerenciador de pacotes padrão para o Python.
 Mais detalhes de como funciona acessando: https://packaging.python.org/tutorials/installing-packages/
 
 ```bash 
-pip freeze > requirements.txt
+python -m venv venv  
+pip install -R requirements.txt
 ```
 
 #### Documentação
