@@ -31,6 +31,7 @@ Mais detalhes de como funciona acessando: https://packaging.python.org/tutorials
 
 ```bash 
 python -m venv venv  
+source venv/bin/activate  
 pip install -R requirements.txt
 ```
 
